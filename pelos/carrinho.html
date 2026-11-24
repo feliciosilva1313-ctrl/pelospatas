@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho | Patas e Pelos</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="compra.css">
+    <link rel="stylesheet" href="carrinho.css">
 </head>
 
 <body>
@@ -18,6 +18,7 @@
 
             <ul>
                 <li><a href="agendamento.html">Agendar</a></li>
+                <li><a href="index.html#promocoes">Promoções</a></li>
                 <li><a href="index.html#loja">Loja</a></li>
                 <li><a href="index.html#Sobre">Sobre nós</a></li>
                 <li><a href="index.html#localizacao">Localização</a></li>
@@ -26,124 +27,24 @@
         </nav>
     </header>
 
-    <main class="checkout">
-        <h1 class="checkout-titulo">Seu carrinho </h1>
+    <section class="pagina-carrinho">
+        <h1>Meu carrinho 🛒</h1>
 
-        <div class="checkout-grid">
+        <div id="lista-carrinho"></div>
 
-            <div class="checkout-coluna">
-
-                <section class="caixa">
-                    <h2>Produtos</h2>
-
-                    <article class="item-carrinho">
-                        <img src="bolsa.png" alt="Bolsa de transporte pet">
-                        <div class="item-info">
-                            <h3>Bolsa de Transporte Pet</h3>
-                            <p>R$ 75,00 cada</p>
-                            <a href="#" class="btn-remover">Remover</a>
-                        </div>
-                        <div class="quantidade">
-                            <button type="button" aria-label="Diminuir">−</button>
-                            <span>1</span>
-                            <button type="button" aria-label="Aumentar">+</button>
-                        </div>
-                        <div class="item-preco">R$ 75,00</div>
-                    </article>
-
-                    <article class="item-carrinho">
-                        <img src="laços.png" alt="Laços para pets">
-                        <div class="item-info">
-                            <h3>Laços para Pets</h3>
-                            <p>R$ 75,00 cada</p>
-                            <a href="#" class="btn-remover">Remover</a>
-                        </div>
-                        <div class="quantidade">
-                            <button type="button" aria-label="Diminuir">−</button>
-                            <span>2</span>
-                            <button type="button" aria-label="Aumentar">+</button>
-                        </div>
-                        <div class="item-preco">R$ 150,00</div>
-                    </article>
-                </section>
-
-                <section class="caixa">
-                    <h2>Seus dados</h2>
-
-                    <div class="campos">
-                        <label class="campo cheio">
-                            Nome completo
-                            <input type="text" placeholder="Seu nome" required>
-                        </label>
-                        <label class="campo">
-                            Telefone
-                            <input type="tel" placeholder="(31) 99999-9999" required>
-                        </label>
-                        <label class="campo">
-                            E-mail
-                            <input type="email" placeholder="voce@email.com" required>
-                        </label>
-                        <label class="campo cheio">
-                            Endereço de entrega
-                            <input type="text" placeholder="Rua, número, bairro">
-                        </label>
-                    </div>
-                </section>
-
-                <section class="caixa">
-                    <h2>Pagamento</h2>
-
-                    <div class="opcoes">
-                        <label class="opcao">
-                            <input type="radio" name="pagamento" value="pix" checked>
-                            <span>Pix</span>
-                        </label>
-                        
-                        <label class="opcao">
-                            <input type="radio" name="pagamento" value="loja">
-                            <span>Na retirada</span>
-                        </label>
-                    </div>
-                </section>
-
-            </div>
-
-            <aside class="caixa resumo">
-                <h2>Resumo do pedido</h2>
-
-                <div class="cupom">
-                    <input type="text" placeholder="Cupom de desconto">
-                    
-                    <button type="button">Aplicar</button>
-                </div>
-
-                <dl class="totais">
-                    <div>
-                        <dt>Subtotal</dt>
-                        <dd>R$ 225,00</dd>
-                    </div>
-                    <div>
-                        <dt>Entrega</dt>
-                        <dd>R$ 10,00</dd>
-                    </div>
-                    <div class="total">
-                        <dt>Total</dt>
-                        <dd>R$ 235,00</dd>
-                    </div>
-                </dl>
-
-                <button type="submit" class="btn-finalizar">Finalizar pedido</button>
-                <a class="voltar" href="index.html#loja">Continuar comprando</a>
-            </aside>
-
+        <div class="resumo">
+            <h2>Total: <span id="total">R$ 0,00</span></h2>
+            <button onclick="finalizarCompra()">Finalizar compra</button>
+            <button onclick="limparCarrinho()">Esvaziar carrinho</button>
         </div>
-    </main>
+    </section>
 
     <section class="footer">
         <footer>
             <p>© Patas e Pelos - Contagem-MG. Todos os direitos reservados.</p>
         </footer>
     </section>
-    <script src="compra.js"></script>
+
+    <script src="carrinho.js"></script>
 </body>
 </html>
