@@ -1,0 +1,72 @@
+/* ===== Patas e Pelos - localizacao.css ===== */
+.localizacao {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+.localizacao h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 36px;
+}
+
+.localizacao-container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.localizacao-info {
+    background: var(--branco);
+    padding: 28px;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.info-bloco h3 { color: var(--laranja-escuro); margin-bottom: 8px; }
+
+.horarios li {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e4d6c6;
+}
+
+.horarios li:last-child { border-bottom: none; }
+
+.btn-rota {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 12px 28px;
+    border-radius: 50px;
+    background: var(--verde);
+    color: var(--branco);
+    font-weight: 700;
+    transition: transform .2s, opacity .2s;
+}
+
+.btn-rota:hover { transform: translateY(-3px); opacity: .9; }
+
+.localizacao-mapa {
+    min-height: 340px;
+    border-radius: var(--raio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+.localizacao-mapa iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    border: 0;
+}
+
+@media (max-width: 800px) {
+    .localizacao-container { grid-template-columns: 1fr; }
+}

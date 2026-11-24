@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="banho.css">
+</head>
+ <header class="header">
+
+        <nav class="nav">
+
+            <a href="../html/index.html" class="logo">
+                <img src="Logo Patas e Pelos em Laranja e Marrom.png" alt="Logo Patas e Pelos">
+            </a>
+
+           <ul>
+                <li><a href="#">Agendar</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Loja</a></li>
+                <li><a href="#Sobre">Sobre</a></li>
+            </ul>
+
+        </nav>
+
+<body>
+
+<h1>Agendamento de Banho</h1>
+
+<section class="Card" >
+    <div class="img">
+   
+    </div>
+    <p>Conte mais sobre seu Pet</p>
+
+    <form>
+
+        <label for="nomePet">Nome do pet</label>
+        <input type="text" id="nomePet" placeholder="Digite o nome do pet">
+
+        <label for="raca">Raça</label>
+        <input type="text" id="raca" placeholder="Qual a raça?">
+
+        <label for="responsavel">Nome do responsável</label>
+        <input type="text" id="responsavel" placeholder="Nome do responsável">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="E-mail de contato">
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" placeholder="Telefone de contato">
+
+    </form>
+
+    <form>
+
+        <p>Seu pet possui alguma alergia?</p>
+
+        
+
+        <textarea 
+            name="alergia" 
+            id="alergia" 
+            placeholder="Descreva aqui..."
+            rows="5"></textarea>
+
+    </form>
+        <div class="btn"> 
+        <button  onclick="abririPopup()">concluir</button>
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="popup-conteudo">
+                <h2>Agendamento concluído!</h2>
+                <p>Agendamento concluído com sucesso, confia seu Email.</p>
+            </div>
+        </div>
+        <script>
+            function abririPopup(){
+                document.getElementById("popup").style.display = "flex";
+
+                setTimeout( function(){
+                    document.getElementById("popup").style.display = "none";
+                },3000);
+                }
+        </script>
+</section>
+
+
+
+
+
+
+</body>
+
+</html>

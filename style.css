@@ -1,0 +1,315 @@
+/* ===== Patas e Pelos - style.css ===== */
+:root {
+    --laranja: #ff8a3d;
+    --laranja-escuro: #e5701f;
+    --marrom: #3b2a20;
+    --creme: #fff7ee;
+    --bege: #ffe9d2;
+    --verde: #2bb5a0;
+    --branco: #ffffff;
+    --cinza: #6b6b6b;
+    --sombra: 0 6px 18px rgba(59, 42, 32, 0.12);
+    --raio: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: var(--marrom);
+    background: var(--creme);
+    line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ===== Header ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--branco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo img { height: 55px; width: auto; }
+
+.nav ul { display: flex; gap: 22px; flex-wrap: wrap; }
+
+.nav ul a {
+    font-weight: 600;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+
+.nav ul a:hover {
+    color: var(--laranja-escuro);
+    border-color: var(--laranja);
+}
+
+/* ===== Home ===== */
+.cardhome {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.texto-home { flex: 1; }
+
+.texto-home h1 {
+    font-size: 3rem;
+    color: var(--laranja-escuro);
+    line-height: 1.1;
+}
+
+.texto-home h2 { font-size: 1.5rem; margin: 12px 0 8px; }
+.texto-home p { color: var(--cinza); font-size: 1.1rem; }
+
+.agendar {
+    margin-top: 24px;
+    border: none;
+    border-radius: 50px;
+    background: var(--laranja);
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: transform .2s, background .2s;
+}
+
+.agendar a {
+    display: block;
+    padding: 14px 32px;
+    color: var(--branco);
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.agendar:hover { background: var(--laranja-escuro); transform: translateY(-3px); }
+
+.imagem-home { flex: 1; }
+
+.imagem-home img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+}
+
+/* ===== Higiene ===== */
+.Higiene {
+    background: var(--bege);
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.imagem-higiene { max-width: 420px; flex: 1; }
+
+.imagem-higiene img {
+    width: 100%;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.conteudo-higiene { max-width: 520px; flex: 1; }
+.conteudo-higiene h2 { font-size: 1.8rem; margin-bottom: 20px; }
+
+.item {
+    background: var(--branco);
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 5px solid var(--laranja);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Por que escolher ===== */
+.porque {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.porque h2 { font-size: 2rem; }
+
+.porque-sub {
+    max-width: 640px;
+    margin: 10px auto 36px;
+    color: var(--cinza);
+}
+
+.porque-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+.porque-card {
+    background: var(--branco);
+    padding: 28px 20px;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    transition: transform .25s;
+}
+
+.porque-card:hover { transform: translateY(-6px); }
+.porque-icone { font-size: 2.4rem; display: block; margin-bottom: 10px; }
+.porque-card h3 { margin-bottom: 8px; color: var(--laranja-escuro); }
+.porque-card p { color: var(--cinza); font-size: .95rem; }
+
+/* ===== Lojinha ===== */
+.loja {
+    background: var(--bege);
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    max-width: 100%;
+}
+
+.loja h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.card-toy { max-width: 300px; width: 100%; margin: 0 auto; }
+
+.card {
+    background: var(--branco);
+    border-radius: var(--raio);
+    padding: 18px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s;
+}
+
+.card:hover { transform: translateY(-6px); }
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.card h2 { font-size: 1.05rem; flex: 1; }
+.card h3 { color: var(--verde); font-size: 1.3rem; margin: 10px 0; }
+
+
+.btn-carrinho {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #eee;
+    transition: 0.3s;
+}
+
+.btn-carrinho:hover {
+    background-color: #ddd;
+}
+.btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 50px;
+    background: var(--laranja);
+    color: var(--branco);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.btn:hover { background: var(--laranja-escuro); }
+
+/* ===== Sobre nós ===== */
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.about h1 { font-size: 2.2rem; margin-bottom: 20px; }
+.about p { font-size: 1.05rem; color: var(--cinza); }
+
+/* ===== Avaliação ===== */
+.avaliacao {
+    background: var(--marrom);
+    color: var(--branco);
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.avaliacao h2 { font-size: 1.8rem; }
+
+.avaliacao textarea {
+    width: 100%;
+    max-width: 560px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.avaliacao textarea:focus { outline: 3px solid var(--laranja); }
+
+.enviar {
+    padding: 12px 34px;
+    border: none;
+    border-radius: 50px;
+    background: var(--laranja);
+    color: var(--branco);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.enviar:hover { background: var(--laranja-escuro); }
+
+/* ===== Footer ===== */
+.footer { background: #2a1d15; color: #d9cfc6; text-align: center; padding: 20px; font-size: .9rem; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 800px) {
+    .nav { justify-content: center; }
+    .nav ul { justify-content: center; gap: 14px; }
+    .cardhome, .Higiene { flex-direction: column; text-align: center; padding: 40px 20px; }
+    .texto-home h1 { font-size: 2.3rem; }
+    .conteudo-higiene { text-align: left; }
+}

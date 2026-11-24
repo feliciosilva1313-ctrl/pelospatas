@@ -1,0 +1,222 @@
+
+:root {
+    --laranja: #ff8a3d;
+    --laranja-escuro: #e5701f;
+    --marrom: #3b2a20;
+    --creme: #fff7ee;
+    --bege: #ffe9d2;
+    --verde: #2bb5a0;
+    --cinza: #6b6b6b;
+    --sombra: 0 6px 18px rgba(59, 42, 32, 0.12);
+    --raio: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: var(--marrom);
+    background: var(--creme);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ===== Header ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo img { height: 55px; width: auto; }
+
+.nav ul { display: flex; gap: 22px; flex-wrap: wrap; }
+
+.nav ul a {
+    font-weight: 600;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+
+.nav ul a:hover {
+    color: var(--laranja-escuro);
+    border-color: var(--laranja);
+}
+
+/* ===== Título ===== */
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--laranja-escuro);
+    margin: 40px 20px 24px;
+}
+
+/* ===== Card do formulário ===== */
+.Card {
+    width: calc(100% - 40px);
+    max-width: 560px;
+    margin: 0 auto 60px;
+    padding: 32px 28px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Espaço da foto/ícone do pet (div vazia no HTML) */
+.img {
+    width: 110px;
+    height: 110px;
+    margin: -70px auto 0;
+    background: var(--bege);
+    border: 5px solid #fff;
+    border-radius: 50%;
+    box-shadow: var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img::before { content: "🐶"; font-size: 3.2rem; }
+.img img { width: 100%; height: 100%; object-fit: cover; }
+
+.Card > p {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* ===== Formulários ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+form p {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+label {
+    font-weight: 600;
+    font-size: .95rem;
+    margin-top: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #eadbc8;
+    border-radius: 12px;
+    background: var(--creme);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--marrom);
+    transition: border-color .2s, box-shadow .2s;
+}
+
+input::placeholder,
+textarea::placeholder { color: #a89a8c; }
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--laranja);
+    box-shadow: 0 0 0 3px rgba(255, 138, 61, 0.25);
+    background: #fff;
+}
+
+textarea { resize: vertical; min-height: 110px; }
+
+/* ===== Botão concluir ===== */
+.btn { text-align: center; margin-top: 6px; }
+
+.btn button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    background: var(--laranja);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: background .2s, transform .2s;
+}
+
+.btn button:hover { background: var(--laranja-escuro); transform: translateY(-2px); }
+.btn button:active { transform: translateY(0); }
+
+/* ===== Popup (o JS troca display none <-> flex) ===== */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: aparecer .3s ease;
+}
+
+.popup-conteudo {
+    width: 100%;
+    max-width: 400px;
+    padding: 36px 28px;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border-top: 6px solid var(--verde);
+    animation: subir .35s ease;
+}
+
+.popup-conteudo::before {
+    content: "✅";
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.popup-conteudo h2 { color: var(--verde); font-size: 1.5rem; margin-bottom: 10px; }
+.popup-conteudo p { color: var(--cinza); }
+
+@keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+@keyframes subir {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 600px) {
+    .nav { justify-content: center; }
+    .nav ul { justify-content: center; gap: 14px; }
+    h1 { font-size: 1.7rem; }
+    .Card { padding: 28px 18px; }
+}

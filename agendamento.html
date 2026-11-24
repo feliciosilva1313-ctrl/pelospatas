@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Banho | Patas e Pelos</title>
+    <link rel="stylesheet" href="banho.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="../html/index.html" class="logo">
+                <img src="Logo Patas e Pelos em Laranja e Marrom.png" alt="Logo Patas e Pelos">
+            </a>
+
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#promocoes">Promoções</a></li>
+                <li><a href="index.html#loja">Loja</a></li>
+                <li><a href="index.html#Sobre">Sobre nós</a></li>
+                <li><a href="index.html#localizacao">Localização</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Agendamento de Banho</h1>
+
+    <section class="Card">
+        <div class="img"></div>
+
+        <p>Conte mais sobre seu Pet</p>
+
+        <form id="formAgendamento">
+
+            <label for="nomePet">Nome do pet</label>
+            <input type="text" id="nomePet" name="nomePet" placeholder="Digite o nome do pet" required>
+
+            <label for="raca">Raça</label>
+            <input type="text" id="raca" name="raca" placeholder="Qual a raça?" required>
+
+            <label for="responsavel">Nome do responsável</label>
+            <input type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="E-mail de contato" required>
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Telefone de contato" required>
+
+            <label for="alergia">Seu pet possui alguma alergia?</label>
+            <textarea
+                name="alergia"
+                id="alergia"
+                placeholder="Descreva aqui..."
+                rows="5"></textarea>
+
+            <div class="btn">
+                <button type="submit">Concluir</button>
+            </div>
+
+        </form>
+    </section>
+
+    <div class="popup" id="popup">
+        <div class="popup-conteudo">
+            <h2>Agendamento concluído!</h2>
+            <p>Agendamento concluído com sucesso. Confira seu e-mail.</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("formAgendamento");
+        const popup = document.getElementById("popup");
+
+        form.addEventListener("submit", function (evento) {
+            evento.preventDefault(); // evita recarregar a página
+
+            popup.style.display = "flex";
+
+            setTimeout(function () {
+                popup.style.display = "none";
+                form.reset();
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>

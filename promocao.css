@@ -1,0 +1,216 @@
+/* ===== Patas e Pelos - promocao.css ===== */
+
+/* ----- Barra no topo ----- */
+.promo-barra {
+    position: relative;
+    background: linear-gradient(90deg, var(--laranja-escuro), var(--laranja));
+    color: var(--branco);
+    text-align: center;
+    padding: 10px 44px 10px 16px;
+    font-size: .95rem;
+}
+
+.promo-barra[hidden],
+.promo-barra.oculta { display: none; }
+
+.promo-timer {
+    display: inline-block;
+    min-width: 78px;
+    margin-left: 4px;
+    padding: 2px 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.promo-fechar {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* ----- Seção de promoções ----- */
+.promo-secao {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.promo-secao h2 { font-size: 2rem; }
+.promo-sub { color: var(--cinza); margin: 8px 0 36px; }
+
+.promo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.promo-card {
+    position: relative;
+    background: var(--branco);
+    padding: 32px 22px 26px;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform .25s;
+}
+
+.promo-card:hover { transform: translateY(-6px); }
+
+.promo-card.destaque {
+    border: 3px solid var(--laranja);
+    transform: scale(1.03);
+}
+
+.promo-card.destaque:hover { transform: scale(1.03) translateY(-6px); }
+
+.promo-selo {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--laranja);
+    color: var(--branco);
+    padding: 4px 16px;
+    border-radius: 50px;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.promo-card h3 { font-size: 1.2rem; }
+.promo-card p { color: var(--cinza); font-size: .95rem; }
+
+.promo-preco { font-size: 1.1rem; }
+.promo-preco s { color: #a0a0a0; margin-right: 6px; }
+.promo-preco strong { color: var(--verde); font-size: 1.7rem; }
+
+.promo-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    background: var(--laranja);
+    color: var(--branco);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+.promo-btn:hover { background: var(--laranja-escuro); transform: translateY(-2px); }
+
+/* ----- Cupom ----- */
+.promo-cupom {
+    margin-top: 36px;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 22px;
+    background: var(--bege);
+    border: 2px dashed var(--laranja);
+    border-radius: 14px;
+}
+
+.promo-cupom code {
+    background: var(--branco);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--laranja-escuro);
+}
+
+.promo-cupom button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 50px;
+    background: var(--marrom);
+    color: var(--branco);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.promo-cupom button:hover { background: #5a4130; }
+
+/* ----- Popup ----- */
+.popup-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: aparecer .3s ease;
+}
+
+.popup-fundo[hidden] { display: none; }
+
+.popup {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: var(--branco);
+    padding: 36px 28px 28px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    animation: subir .35s ease;
+}
+
+.popup-emoji { font-size: 3rem; display: block; }
+.popup h3 { font-size: 1.5rem; margin: 8px 0 10px; }
+.popup p { color: var(--cinza); margin-bottom: 20px; }
+.popup p strong { color: var(--laranja-escuro); }
+
+.popup-fechar {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--cinza);
+    cursor: pointer;
+}
+
+.popup-fechar:hover { color: var(--marrom); }
+
+.popup-nao {
+    display: block;
+    margin: 14px auto 0;
+    background: none;
+    border: none;
+    color: var(--cinza);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+@keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+@keyframes subir {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .promo-card.destaque { transform: none; }
+    .promo-card.destaque:hover { transform: translateY(-6px); }
+}
