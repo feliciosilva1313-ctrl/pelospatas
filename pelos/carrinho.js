@@ -103,7 +103,7 @@ function limparCarrinho() {
 }
 
 function finalizarCompra() {
-    alert("compra finalizada!")
+    alert("Confira o email para finalizar sua compra!🐶")
     limparCarrinho();
     window.location.href = "index.html";
 }
