@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="localizacao.css">
     <link rel="stylesheet" href="promocao.css">
     <link rel="stylesheet" href="carrinho.css">
+
+    
 </head>
 
 <body>
@@ -31,6 +33,8 @@
 
                 <!-- PERFIL -->
                 <li class="perfil-menu">
+                    <a href="../pelos/form1.html" class="btn-entrar" id="btnEntrar" hidden>Entrar</a>
+
                     <button class="perfil-avatar" id="perfilAvatar" type="button" aria-label="Abrir perfil" aria-expanded="false"></button>
 
                     <div class="perfil-dropdown" id="perfilDropdown">
@@ -337,20 +341,28 @@
 
     <!-- SCRIPT DO PERFIL -->
     <script>
-        // Dados do usuário (troque pelos dados reais do login, se tiver)
-        const usuario = {
+        // Usuário de exemplo (aparece até o primeiro clique em "Sair")
+        const usuarioPadrao = {
             nome: "Fernanda Silva",
             email: "fernanda@email.com",
             telefone: "(31) 99999-9999",
             cidade: "Contagem - MG",
-            foto: "" // caminho da foto; se ficar vazio, mostra a inicial do nome
+            foto: "" // caminho da foto; se vazio, mostra a inicial do nome
         };
 
         const perfilAvatar = document.getElementById("perfilAvatar");
         const perfilAvatarGrande = document.getElementById("perfilAvatarGrande");
         const perfilDropdown = document.getElementById("perfilDropdown");
+        const btnEntrar = document.getElementById("btnEntrar");
 
-        function preencherAvatar(el) {
+        function pegarUsuario() {
+            const salvo = localStorage.getItem("usuario");
+            if (salvo) return JSON.parse(salvo);               // veio do login
+            if (localStorage.getItem("deslogado")) return null; // clicou em Sair
+            return usuarioPadrao;
+        }
+
+        function preencherAvatar(el, usuario) {
             if (usuario.foto) {
                 el.innerHTML = '<img src="' + usuario.foto + '" alt="Foto de ' + usuario.nome + '">';
             } else {
@@ -358,18 +370,32 @@
             }
         }
 
-        preencherAvatar(perfilAvatar);
-        preencherAvatar(perfilAvatarGrande);
-
-        document.getElementById("perfilNome").textContent = usuario.nome;
-        document.getElementById("perfilEmail").textContent = usuario.email;
-        document.getElementById("perfilTelefone").textContent = usuario.telefone;
-        document.getElementById("perfilCidade").textContent = usuario.cidade;
-
         function alternarMenu(abrir) {
             const aberto = abrir !== undefined ? abrir : !perfilDropdown.classList.contains("aberto");
             perfilDropdown.classList.toggle("aberto", aberto);
             perfilAvatar.setAttribute("aria-expanded", aberto);
+        }
+
+        function mostrarPerfil() {
+            const usuario = pegarUsuario();
+
+            if (!usuario) {
+                // Deslogado: some o avatar e aparece o botão Entrar
+                alternarMenu(false);
+                perfilAvatar.hidden = true;
+                btnEntrar.hidden = false;
+                return;
+            }
+
+            // Logado: aparece o avatar e some o botão Entrar
+            btnEntrar.hidden = true;
+            perfilAvatar.hidden = false;
+            preencherAvatar(perfilAvatar, usuario);
+            preencherAvatar(perfilAvatarGrande, usuario);
+            document.getElementById("perfilNome").textContent = usuario.nome;
+            document.getElementById("perfilEmail").textContent = usuario.email;
+            document.getElementById("perfilTelefone").textContent = usuario.telefone;
+            document.getElementById("perfilCidade").textContent = usuario.cidade;
         }
 
         perfilAvatar.addEventListener("click", function (e) {
@@ -383,8 +409,11 @@
 
         document.getElementById("btnSair").addEventListener("click", function () {
             localStorage.removeItem("usuario");
-            window.location.href = "login.html";
+            localStorage.setItem("deslogado", "1");
+            mostrarPerfil();
         });
+
+        mostrarPerfil();
     </script>
 
 </body>

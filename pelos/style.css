@@ -179,6 +179,20 @@ ul { list-style: none; }
     gap: 40px;
 }
 
+.perfil-avatar[hidden], .btn-entrar[hidden] { display: none; }
+
+        .btn-entrar {
+            display: inline-block;
+            padding: 10px 26px;
+            border-radius: 50px;
+            background: #ff8a3d;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(59, 42, 32, 0.12);
+            transition: background .2s, transform .2s;
+        }
+
+        .btn-entrar:hover { background: #e5701f; transform: translateY(-2px); }
 .texto-home { flex: 1; }
 
 .texto-home h1 {
