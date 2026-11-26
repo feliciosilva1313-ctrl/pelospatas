@@ -28,8 +28,27 @@
                 <li><a href="#Sobre">Sobre nós</a></li>
                 <li><a href="#localizacao">Localização</a></li>
                 <li><a href="carrinho.html">carrinho</a></li>
+
+                <!-- PERFIL -->
+                <li class="perfil-menu">
+                    <button class="perfil-avatar" id="perfilAvatar" type="button" aria-label="Abrir perfil" aria-expanded="false"></button>
+
+                    <div class="perfil-dropdown" id="perfilDropdown">
+                        <div class="perfil-avatar-grande" id="perfilAvatarGrande"></div>
+                        <h3 class="perfil-nome" id="perfilNome"></h3>
+                        <p class="perfil-email" id="perfilEmail"></p>
+
+                        <ul class="perfil-info">
+                            <li><span>Telefone</span> <strong id="perfilTelefone"></strong></li>
+                            <li><span>Cidade</span> <strong id="perfilCidade"></strong></li>
+                        </ul>
+
+                        <button class="btn-sair" id="btnSair" type="button">Sair</button>
+                    </div>
+                </li>
             </ul>
         </nav>
+        
     </header>
 
     <section class="cardhome">
@@ -315,6 +334,58 @@
 
     <script src="../js/promocao.js"></script>
     <script src="carrinho.js"></script>
+
+    <!-- SCRIPT DO PERFIL -->
+    <script>
+        // Dados do usuário (troque pelos dados reais do login, se tiver)
+        const usuario = {
+            nome: "Fernanda Silva",
+            email: "fernanda@email.com",
+            telefone: "(31) 99999-9999",
+            cidade: "Contagem - MG",
+            foto: "" // caminho da foto; se ficar vazio, mostra a inicial do nome
+        };
+
+        const perfilAvatar = document.getElementById("perfilAvatar");
+        const perfilAvatarGrande = document.getElementById("perfilAvatarGrande");
+        const perfilDropdown = document.getElementById("perfilDropdown");
+
+        function preencherAvatar(el) {
+            if (usuario.foto) {
+                el.innerHTML = '<img src="' + usuario.foto + '" alt="Foto de ' + usuario.nome + '">';
+            } else {
+                el.textContent = usuario.nome.trim().charAt(0);
+            }
+        }
+
+        preencherAvatar(perfilAvatar);
+        preencherAvatar(perfilAvatarGrande);
+
+        document.getElementById("perfilNome").textContent = usuario.nome;
+        document.getElementById("perfilEmail").textContent = usuario.email;
+        document.getElementById("perfilTelefone").textContent = usuario.telefone;
+        document.getElementById("perfilCidade").textContent = usuario.cidade;
+
+        function alternarMenu(abrir) {
+            const aberto = abrir !== undefined ? abrir : !perfilDropdown.classList.contains("aberto");
+            perfilDropdown.classList.toggle("aberto", aberto);
+            perfilAvatar.setAttribute("aria-expanded", aberto);
+        }
+
+        perfilAvatar.addEventListener("click", function (e) {
+            e.stopPropagation();
+            alternarMenu();
+        });
+
+        perfilDropdown.addEventListener("click", function (e) { e.stopPropagation(); });
+        document.addEventListener("click", function () { alternarMenu(false); });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") alternarMenu(false); });
+
+        document.getElementById("btnSair").addEventListener("click", function () {
+            localStorage.removeItem("usuario");
+            window.location.href = "login.html";
+        });
+    </script>
 
 </body>
 </html>

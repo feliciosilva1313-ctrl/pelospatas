@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="../pelos/form1.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <aside class="lateral">
+            <img src="../pelos/85870f5bbe61185082024d5c0ed96804.jpg" alt="img">
+        </aside>
+
+        <section class="conteudo">
+
+            <div class="formulario">
+
+                <div class="abas">
+                    <button type="button" id="abaLogin" class="ativa" onclick="mostrarLogin()">Login</button>
+                    <button type="button" id="abaCadastro" onclick="mostrarCadastro()">Cadastro</button>
+                </div>
+
+                <form id="formLogin" onsubmit="entrar(event)">
+                    <h2>Bem-vindo de volta</h2>
+                    <p>Entre na sua conta</p>
+
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <input type="password" placeholder="Sua senha" required>
+
+                    <button type="submit" class="botao" href="pelos\index.html">Entrar</button>
+
+                    <span>Não tem uma conta? <a href="#" onclick="mostrarCadastro(); return false;">Cadastre-se</a></span>
+                </form>
+
+                <form id="formCadastro" class="escondido" onsubmit="cadastrar(event)">
+                    <h2>Crie sua conta</h2>
+                    <p>Preencha seus dados para começar</p>
+
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <input type="password" placeholder="Sua senha" required>
+                    <input type="password" placeholder="Confirme sua senha" required>
+
+                    <button type="submit" class="botao">Cadastrar</button>
+
+        </section>
+
+    </main>
+
+    <script src="../pelos/form1.js"></script>
+</body>
+</html>
