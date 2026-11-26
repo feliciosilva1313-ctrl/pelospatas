@@ -201,6 +201,71 @@ ul { list-style: none; }
     line-height: 1.1;
 }
 
+.aval-fundo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(59, 42, 32, 0.6);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.aval-caixa {
+    background: #ffffff;
+    width: 100%;
+    max-width: 360px;
+    padding: 35px 30px;
+    border-radius: 20px;
+    border-top: 6px solid #ff8a3d;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(59, 42, 32, 0.3);
+    animation: avalSubir 0.3s ease;
+}
+
+.aval-emoji {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.aval-caixa h3 {
+    font-size: 22px;
+    color: #3b2a20;
+    margin-bottom: 8px;
+}
+
+.aval-caixa p {
+    font-size: 15px;
+    color: #6b6b6b;
+    margin-bottom: 22px;
+}
+
+.aval-caixa button {
+    height: 46px;
+    padding: 0 35px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff8a3d, #e5701f);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(229, 112, 31, 0.4);
+    transition: 0.3s;
+}
+
+.aval-caixa button:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes avalSubir {
+    from { opacity: 0; transform: translateY(25px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 .texto-home h2 { font-size: 1.5rem; margin: 12px 0 8px; }
 .texto-home p { color: var(--cinza); font-size: 1.1rem; }
 

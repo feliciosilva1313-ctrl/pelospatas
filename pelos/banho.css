@@ -172,46 +172,98 @@ textarea { resize: vertical; min-height: 110px; }
 .btn button:hover { background: var(--laranja-escuro); transform: translateY(-2px); }
 .btn button:active { transform: translateY(0); }
 
-/* ===== Popup (o JS troca display none <-> flex) ===== */
+/* Fundo escurecido do popup */
 .popup {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.6);
-    align-items: center;
+    background: rgba(59, 42, 32, 0.6);
+    backdrop-filter: blur(3px);
     justify-content: center;
+    align-items: center;
     padding: 20px;
-    animation: aparecer .3s ease;
+    z-index: 1000;
+    animation: aparecerFundo 0.25s ease;
 }
 
+/* Caixa do popup */
 .popup-conteudo {
+    background: #ffffff;
     width: 100%;
-    max-width: 400px;
-    padding: 36px 28px;
-    background: #fff;
+    max-width: 380px;
+    padding: 35px 30px;
     border-radius: 20px;
+    border-top: 6px solid #ff8a3d;
     text-align: center;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    border-top: 6px solid var(--verde);
-    animation: subir .35s ease;
+    box-shadow: 0 12px 30px rgba(59, 42, 32, 0.3);
+    animation: subirPopup 0.3s ease;
 }
 
-.popup-conteudo::before {
-    content: "✅";
-    display: block;
-    font-size: 3rem;
-    margin-bottom: 8px;
+.popup-conteudo h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3b2a20;
+    margin-bottom: 10px;
 }
 
-.popup-conteudo h2 { color: var(--verde); font-size: 1.5rem; margin-bottom: 10px; }
-.popup-conteudo p { color: var(--cinza); }
-
-@keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
-@keyframes subir {
-    from { transform: translateY(30px); opacity: 0; }
-    to   { transform: translateY(0); opacity: 1; }
+.popup-conteudo p {
+    font-size: 15px;
+    color: #6b6b6b;
+    margin-bottom: 25px;
 }
+
+/* Área dos botões */
+.popup-botoes {
+    display: flex;
+    gap: 12px;
+}
+
+.popup-botoes .btn-sim,
+.popup-botoes .btn-nao {
+    flex: 1;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Botão Sim */
+.btn-sim {
+    background: linear-gradient(135deg, #ff8a3d, #e5701f);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(229, 112, 31, 0.4);
+}
+
+.btn-sim:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(229, 112, 31, 0.5);
+}
+
+/* Botão Não */
+.btn-nao {
+    background: transparent;
+    color: #e5701f;
+    border: 2px solid #ff8a3d;
+}
+
+.btn-nao:hover {
+    background: #fff7ee;
+    transform: translateY(-3px);
+}
+
+.btn-sim:active,
+.btn-nao:active {
+    transform: scale(0.95);
+}
+
+
 
 /* ===== Responsivo ===== */
 @media (max-width: 600px) {

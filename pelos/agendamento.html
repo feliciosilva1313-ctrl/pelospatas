@@ -59,6 +59,9 @@
             <div class="btn">
                 <button type="submit">Concluir</button>
             </div>
+                    <p id="avisoLogin" style="display:none; color:red; text-align:center;">
+                Faça login para concluir o agendamento.
+             </p>
 
         </form>
     </section>
@@ -70,22 +73,72 @@
         </div>
     </div>
 
-    <script>
-        const form = document.getElementById("formAgendamento");
-        const popup = document.getElementById("popup");
+        <div class="popup" id="popupLogin">
+            <div class="popup-conteudo">
+                <h2>Você não está logado</h2>
+                <p>Deseja logar?</p>
+                <a href="../pelos/form1.html" class="btn-sim">Sim</a>
+                <button type="button" id="btnNao">Não</button>
+            </div>
+        </div>
+        <div class="popup" id="popupLogin">
+    <div class="popup-conteudo">
+        <h2>Você não está logado</h2>
+        <p>Deseja logar?</p>
 
-        form.addEventListener("submit", function (evento) {
-            evento.preventDefault(); // evita recarregar a página
+        <div class="popup-botoes">
+            <a href="../pelos/form1.html" class="btn-sim">Sim</a>
+            <button type="button" id="btnNao" class="btn-nao">Não</button>
+        </div>
+    </div>
+</div>
 
-            popup.style.display = "flex";
+   <script>
+    const form = document.getElementById("formAgendamento");
+    const popup = document.getElementById("popup");
+    const popupLogin = document.getElementById("popupLogin");
+    const btnNao = document.getElementById("btnNao");
+    const avisoLogin = document.getElementById("avisoLogin");
 
-            setTimeout(function () {
-                popup.style.display = "none";
-                form.reset();
-            }, 3000);
-        });
+    // Só está logado se "logado" for true E existir um usuário cadastrado
+    function estaLogado() {
+        const logado = localStorage.getItem("logado") === "true";
+        const usuario = localStorage.getItem("usuario");
+        return logado && usuario !== null;
+    }
 
-    </script>
+    // Se estiver logado, preenche os dados do responsável automaticamente
+    if (estaLogado()) {
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
+        document.getElementById("responsavel").value = usuario.nome;
+        document.getElementById("email").value = usuario.email;
+        document.getElementById("telefone").value = usuario.telefone;
+    }
 
+    form.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+
+        // Sem login: NÃO agenda, só pergunta se quer logar
+        if (!estaLogado()) {
+            avisoLogin.style.display = "none";
+            popupLogin.style.display = "flex";
+            return;
+        }
+
+        // Com login: confirma o agendamento
+        popup.style.display = "flex";
+
+        setTimeout(function () {
+            popup.style.display = "none";
+            form.reset();
+        }, 3000);
+    });
+
+    // "Não": fecha o popup e mostra só o aviso (sem popup)
+    btnNao.addEventListener("click", function () {
+        popupLogin.style.display = "none";
+        avisoLogin.style.display = "block";
+    });
+</script>
 </body>
 </html>

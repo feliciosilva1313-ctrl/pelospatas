@@ -14,8 +14,6 @@
 
 <body>
 
-
-
     <header class="header">
         <nav class="nav">
             <a href="index.html" class="logo">
@@ -52,7 +50,6 @@
                 </li>
             </ul>
         </nav>
-        
     </header>
 
     <section class="cardhome">
@@ -92,50 +89,49 @@
         </div>
     </section>
 
-    <!-- NOVA SEÇÃO: PROMOÇÕES -->
-<section class="promo-secao" id="promocoes">
-    <h2>Promoções da semana 🎁</h2>
-    <p class="promo-sub">Aproveite antes que acabe! Ofertas válidas por tempo limitado.</p>
+    <!-- SEÇÃO: PROMOÇÕES -->
+    <section class="promo-secao" id="promocoes">
+        <h2>Promoções da semana 🎁</h2>
+        <p class="promo-sub">Aproveite antes que acabe! Ofertas válidas por tempo limitado.</p>
 
-    <div class="promo-cards">
+        <div class="promo-cards">
 
-        <div class="promo-card destaque">
-            <span class="promo-selo">Mais pedido</span>
-            <h3>Banho + Tosa Higiênica</h3>
-            <p class="promo-preco">
-                <s>R$ 90,00</s> <strong>R$ 72,00</strong>
-            </p>
-            <p>Para novos clientes: 20% de desconto no primeiro banho.</p>
-            <a href="agendamento.html" class="promo-btn">Agendar com desconto</a>   
-            
+            <div class="promo-card destaque">
+                <span class="promo-selo">Mais pedido</span>
+                <h3>Banho + Tosa Higiênica</h3>
+                <p class="promo-preco">
+                    <s>R$ 90,00</s> <strong>R$ 72,00</strong>
+                </p>
+                <p>Para novos clientes: 20% de desconto no primeiro banho.</p>
+                <a href="agendamento.html" class="promo-btn">Agendar com desconto</a>
+            </div>
+
+            <div class="promo-card">
+                <h3>Pacote 4 banhos</h3>
+                <p class="promo-preco">
+                    <s>R$ 280,00</s> <strong>R$ 220,00</strong>
+                </p>
+                <p>Pague 4 banhos e economize. Perfeito para manter o pet sempre cheiroso.</p>
+                <a href="agendamento.html" class="promo-btn">Quero o pacote</a>
+            </div>
+
+            <div class="promo-card">
+                <h3>Leve na lojinha</h3>
+                <p class="promo-preco"><strong>10% OFF</strong></p>
+                <p>Agendou um banho? Ganhe 10% em qualquer item da lojinha.</p>
+                <a href="#loja" class="promo-btn">Ver a lojinha</a>
+            </div>
+
         </div>
 
-        <div class="promo-card">
-            <h3>Pacote 4 banhos</h3>
-            <p class="promo-preco">
-                <s>R$ 280,00</s> <strong>R$ 220,00</strong>
-            </p>
-            <p>Pague 4 banhos e economize. Perfeito para manter o pet sempre cheiroso.</p>
-            <a href="agendamento.html" class="promo-btn">Quero o pacote</a>
+        <div class="promo-cupom">
+            <span>Use o cupom:</span>
+            <code id="cupomCodigo">PATAS20</code>
+            <button type="button" id="cupomCopiar">Copiar</button>
         </div>
+    </section>
 
-        <div class="promo-card">
-            <h3>Leve na lojinha</h3>
-            <p class="promo-preco"><strong>10% OFF</strong></p>
-            <p>Agendou um banho? Ganhe 10% em qualquer item da lojinha.</p>
-            <a href="#loja" class="promo-btn">Ver a lojinha</a>
-        </div>
-
-    </div>
-
-    <div class="promo-cupom">
-        <span>Use o cupom:</span>
-        <code id="cupomCodigo">PATAS20</code>
-        <button type="button" id="cupomCopiar">Copiar</button>
-    </div>
-</section>
-
-    <!-- NOVA SEÇÃO: POR QUE ESCOLHER A PATAS E PELOS -->
+    <!-- SEÇÃO: POR QUE ESCOLHER A PATAS E PELOS -->
     <section class="porque" id="porque">
         <h2>Por que escolher a Patas e Pelos?</h2>
         <p class="porque-sub">
@@ -171,74 +167,72 @@
     </section>
 
     <section class="loja" id="loja">
-    <h1>Lojinha</h1>
+        <h1>Lojinha</h1>
 
-    <div class="card-toy">
-        <div class="card">
-            <img src="bolsa.png" alt="Bolsa de transporte pet">
-            <h2>Bolsa de Transporte Pet</h2>
-            <h3>R$ 75,00</h3>
-            <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
-
-            <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="bolsa" data-nome="Bolsa de Transporte Pet" data-preco="75" data-img="bolsa.png">🛒 </button>
+        <div class="card-toy">
+            <div class="card">
+                <img src="bolsa.png" alt="Bolsa de transporte pet">
+                <h2>Bolsa de Transporte Pet</h2>
+                <h3>R$ 75,00</h3>
+                <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
+                <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="bolsa" data-nome="Bolsa de Transporte Pet" data-preco="75" data-img="bolsa.png">🛒 </button>
+            </div>
         </div>
-    </div>
 
-    <div class="card-toy">
-        <div class="card">
-            <img src="Toalha Pet Para Banho Gatos E Cães Alta Absorção Microfibra.png"
-                 alt="Toalha pet de microfibra">
-            <h2>Toalha Pet Alta Absorção</h2>
-            <h3>R$ 75,00</h3>
-            <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
-            <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="toalha" data-nome="Toalha Pet Alta Absorção" data-preco="75" data-img="Toalha Pet Para Banho Gatos E Cães Alta Absorção Microfibra.png">🛒</button>
+        <div class="card-toy">
+            <div class="card">
+                <img src="Toalha Pet Para Banho Gatos E Cães Alta Absorção Microfibra.png"
+                     alt="Toalha pet de microfibra">
+                <h2>Toalha Pet Alta Absorção</h2>
+                <h3>R$ 75,00</h3>
+                <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
+                <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="toalha" data-nome="Toalha Pet Alta Absorção" data-preco="75" data-img="Toalha Pet Para Banho Gatos E Cães Alta Absorção Microfibra.png">🛒</button>
+            </div>
         </div>
-    </div>
 
-    <div class="card-toy">
-        <div class="card">
-            <img src="Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira.webp"
-                 alt="Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira">
-            <h2>Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira</h2>
-            <h3>R$ 75,00</h3>
-            <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
-            <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="comedouro" data-nome="Comedouro Elevado Madeira" data-preco="75" data-img="Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira.webp">🛒</button>
+        <div class="card-toy">
+            <div class="card">
+                <img src="Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira.webp"
+                     alt="Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira">
+                <h2>Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira</h2>
+                <h3>R$ 75,00</h3>
+                <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
+                <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="comedouro" data-nome="Comedouro Elevado Madeira" data-preco="75" data-img="Comedouro Elevado Madeira Rancho Cupim Tamanho M Cor Madeira.webp">🛒</button>
+            </div>
         </div>
-    </div>
 
-    <div class="card-toy">
-        <div class="card">
-            <img src="shampoo.jpg"
-                 alt="Perfume para Cachorro e Gato Pet Clean - 120 ml - Envio Imediato">
-            <h2>Perfume para Cachorro e Gato Pet Clean - 120 ml - Envio Imediato</h2>
-            <h3>R$ 75,00</h3>
-            <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
-            <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="perfume" data-nome="Perfume Pet Clean 120 ml" data-preco="75" data-img="shampoo.jpg">🛒</button>
-           
+        <div class="card-toy">
+            <div class="card">
+                <img src="shampoo.jpg"
+                     alt="Perfume para Cachorro e Gato Pet Clean - 120 ml - Envio Imediato">
+                <h2>Perfume para Cachorro e Gato Pet Clean - 120 ml - Envio Imediato</h2>
+                <h3>R$ 75,00</h3>
+                <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
+                <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="perfume" data-nome="Perfume Pet Clean 120 ml" data-preco="75" data-img="shampoo.jpg">🛒</button>
+            </div>
         </div>
-    </div>
 
-    <div class="card-toy">
-        <div class="card">
-            <img src="suplemento_vitaminico_vetnil_glicopan_pet_em_gotas_907_1_0be62bb1935f7f85447a6b8b13f55cbe.webp"
-                 alt="Suplemento vitamínico Glicopan Pet">
-            <h2>Suplemento Vitamínico Glicopan Pet</h2>
-            <h3>R$ 75,00</h3>
-            <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
-            <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="glicopan" data-nome="Suplemento Vitamínico Glicopan Pet" data-preco="75" data-img="suplemento_vitaminico_vetnil_glicopan_pet_em_gotas_907_1_0be62bb1935f7f85447a6b8b13f55cbe.webp">🛒</button>
+        <div class="card-toy">
+            <div class="card">
+                <img src="suplemento_vitaminico_vetnil_glicopan_pet_em_gotas_907_1_0be62bb1935f7f85447a6b8b13f55cbe.webp"
+                     alt="Suplemento vitamínico Glicopan Pet">
+                <h2>Suplemento Vitamínico Glicopan Pet</h2>
+                <h3>R$ 75,00</h3>
+                <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
+                <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="glicopan" data-nome="Suplemento Vitamínico Glicopan Pet" data-preco="75" data-img="suplemento_vitaminico_vetnil_glicopan_pet_em_gotas_907_1_0be62bb1935f7f85447a6b8b13f55cbe.webp">🛒</button>
+            </div>
         </div>
-    </div>
 
-    <div class="card-toy">
-        <div class="card">
-            <img src="laços.png" alt="Laços para pets">
-            <h2>Laços para Pets</h2>
-            <h3>R$ 75,00</h3>
-            <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
-            <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="lacos" data-nome="Laços para Pets" data-preco="75" data-img="laços.png">🛒</button>
+        <div class="card-toy">
+            <div class="card">
+                <img src="laços.png" alt="Laços para pets">
+                <h2>Laços para Pets</h2>
+                <h3>R$ 75,00</h3>
+                <div class="btnn"><a href="carrinho.html" class="btn">Comprar</a></div>
+                <button class="btn-add" onclick="adicionarCarrinho(this)" data-id="lacos" data-nome="Laços para Pets" data-preco="75" data-img="laços.png">🛒</button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="about" id="Sobre">
         <h1>Sobre nós</h1>
@@ -257,7 +251,7 @@
         </p>
     </section>
 
-    <!-- NOVA SEÇÃO: LOCALIZAÇÃO E HORÁRIO -->
+    <!-- SEÇÃO: LOCALIZAÇÃO E HORÁRIO -->
     <section class="localizacao" id="localizacao">
         <h2>Venha nos visitar</h2>
 
@@ -301,6 +295,7 @@
         </div>
     </section>
 
+    <!-- SEÇÃO: AVALIAÇÃO -->
     <section class="avaliacao">
         <h2>Cuide do seu pet com carinho!</h2>
 
@@ -313,7 +308,7 @@
             placeholder="Deixe sua avaliação sobre nosso site/atendimento..."
         ></textarea>
 
-        <button class="enviar">Enviar avaliação</button>
+        <button class="enviar" id="btnEnviarAvaliacao" type="button">Enviar avaliação</button>
     </section>
 
     <section class="footer">
@@ -322,19 +317,30 @@
         </footer>
     </section>
 
-<div class="popup-fundo" id="popupOferta" hidden>
-    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitulo">
-        <button class="popup-fechar" id="popupFechar" aria-label="Fechar">✕</button>
-        <span class="popup-emoji">🐾</span>
-        <h3 id="popupTitulo">Espera! Não vá embora ainda</h3>
-        <p>
-            Ganhe <strong>20% de desconto</strong> no primeiro banho do seu pet.
-            Use o cupom <strong>PATAS20</strong> no agendamento.
-        </p>
-        <a href="../html/agendamento.html" class="promo-btn">Quero meu desconto</a>
-        <button class="popup-nao" id="popupNao">Não, obrigado</button>
+    <!-- POPUP: OFERTA -->
+    <div class="popup-fundo" id="popupOferta" hidden>
+        <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitulo">
+            <button class="popup-fechar" id="popupFechar" aria-label="Fechar">✕</button>
+            <span class="popup-emoji">🐾</span>
+            <h3 id="popupTitulo">Espera! Não vá embora ainda</h3>
+            <p>
+                Ganhe <strong>20% de desconto</strong> no primeiro banho do seu pet.
+                Use o cupom <strong>PATAS20</strong> no agendamento.
+            </p>
+            <a href="../html/agendamento.html" class="promo-btn">Quero meu desconto</a>
+            <button class="popup-nao" id="popupNao">Não, obrigado</button>
+        </div>
     </div>
-</div>
+
+    <!-- POPUP: OBRIGADO PELA AVALIAÇÃO -->
+    <div class="aval-fundo" id="popupAvaliacao">
+        <div class="aval-caixa">
+            <span class="aval-emoji">🐾</span>
+            <h3>Obrigado pela avaliação!</h3>
+            <p>Sua opinião é muito importante para a gente.</p>
+            <button type="button" id="avalFechar">Fechar</button>
+        </div>
+    </div>
 
     <script src="../js/promocao.js"></script>
     <script src="carrinho.js"></script>
@@ -414,6 +420,48 @@
         });
 
         mostrarPerfil();
+    </script>
+
+    <!-- SCRIPT DA AVALIAÇÃO -->
+    <script>
+        const btnEnviarAvaliacao = document.getElementById("btnEnviarAvaliacao");
+        const campoAvaliacao = document.getElementById("avalie");
+        const popupAvaliacao = document.getElementById("popupAvaliacao");
+        const avalFechar = document.getElementById("avalFechar");
+
+        let timerAvaliacao;
+
+        function fecharPopupAvaliacao() {
+            popupAvaliacao.style.display = "none";
+            clearTimeout(timerAvaliacao);
+        }
+
+        btnEnviarAvaliacao.addEventListener("click", function () {
+            // Campo vazio: não envia
+            if (campoAvaliacao.value.trim() === "") {
+                campoAvaliacao.focus();
+                return;
+            }
+
+            popupAvaliacao.style.display = "flex"; // mostra o popup
+            campoAvaliacao.value = "";             // apaga a mensagem
+
+            // Fecha sozinho depois de 3 segundos
+            clearTimeout(timerAvaliacao);
+            timerAvaliacao = setTimeout(fecharPopupAvaliacao, 3000);
+        });
+
+        avalFechar.addEventListener("click", fecharPopupAvaliacao);
+
+        // Fecha ao clicar fora da caixa
+        popupAvaliacao.addEventListener("click", function (e) {
+            if (e.target === popupAvaliacao) fecharPopupAvaliacao();
+        });
+
+        // Fecha com a tecla Esc
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") fecharPopupAvaliacao();
+        });
     </script>
 
 </body>

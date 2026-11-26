@@ -121,6 +121,28 @@ form input:focus {
     transform: scale(0.95);
 }
 
+
+
+form input[type="file"] {
+    height: auto;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.label-foto {
+    font-size: 14px;
+    color: #6b6b6b;
+    margin-bottom: -10px;
+}
+
+form .erro {
+    color: #d93025;
+    font-size: 14px;
+    margin: 0;
+    min-height: 0;
+}
+
 form span {
     text-align: center;
     font-size: 14px;

@@ -23,28 +23,45 @@
                     <button type="button" id="abaCadastro" onclick="mostrarCadastro()">Cadastro</button>
                 </div>
 
+                <!-- LOGIN -->
                 <form id="formLogin" onsubmit="entrar(event)">
                     <h2>Bem-vindo de volta</h2>
                     <p>Entre na sua conta</p>
 
-                    <input type="email" placeholder="Seu e-mail" required>
-                    <input type="password" placeholder="Sua senha" required>
+                    <input type="email" id="loginEmail" placeholder="Seu e-mail" required>
+                    <input type="password" id="loginSenha" placeholder="Sua senha" required>
 
-                    <button type="submit" class="botao" href="pelos\index.html">Entrar</button>
+                    <p class="erro" id="erroLogin"></p>
+
+                    <button type="submit" class="botao">Entrar</button>
 
                     <span>Não tem uma conta? <a href="#" onclick="mostrarCadastro(); return false;">Cadastre-se</a></span>
                 </form>
 
+                <!-- CADASTRO -->
                 <form id="formCadastro" class="escondido" onsubmit="cadastrar(event)">
                     <h2>Crie sua conta</h2>
                     <p>Preencha seus dados para começar</p>
 
-                    <input type="text" placeholder="Seu nome" required>
-                    <input type="email" placeholder="Seu e-mail" required>
-                    <input type="password" placeholder="Sua senha" required>
-                    <input type="password" placeholder="Confirme sua senha" required>
+                    <input type="text" id="cadNome" placeholder="Seu nome" required>
+                    <input type="email" id="cadEmail" placeholder="Seu e-mail" required>
+                    <input type="tel" id="cadTelefone" placeholder="Telefone (ex: (31) 99999-9999)" required>
+                    <input type="text" id="cadCidade" placeholder="Cidade (ex: Contagem - MG)" required>
+
+                    <label class="label-foto" for="cadFoto">Foto de perfil (opcional)</label>
+                    <input type="file" id="cadFoto" accept="image/*">
+
+                    <input type="password" id="cadSenha" placeholder="Sua senha" required>
+                    <input type="password" id="cadConfirmar" placeholder="Confirme sua senha" required>
+
+                    <p class="erro" id="erroCadastro"></p>
 
                     <button type="submit" class="botao">Cadastrar</button>
+
+                    <span>Já tem uma conta? <a href="#" onclick="mostrarLogin(); return false;">Entrar</a></span>
+                </form>
+
+            </div>
 
         </section>
 
